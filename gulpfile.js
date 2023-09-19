@@ -41,7 +41,7 @@ const mainTasks = gulp.series(
 );
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
-const build = gulp.series(reset, mainTasks);
+const build = gulp.series(reset, mainTasks );
 const deployZip = gulp.series(reset, mainTasks, zip);
 const deployFtp = gulp.series(reset, mainTasks, ftp);
 // Export scenario
@@ -51,3 +51,4 @@ export { deployZip };
 export { deployFtp };
 // Выполнение сценария по умолчанию
 gulp.task("default", dev);
+gulp.task('deploy',ghPagesTask)

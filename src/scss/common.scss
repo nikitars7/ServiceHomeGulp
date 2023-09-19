@@ -1,40 +1,40 @@
-@import 'mixins.scss';
+@import "mixins.scss";
 .block-header {
- display: grid;
- gap:24px;
-   &--center{
-   text-align: center;
-   }
-   &--inline{
-      grid-template-columns: minmax(auto,586px) minmax(auto,613px);
-      justify-content: space-between;
-      gap:24px;
-      align-items: end;
-   }
-   &__title {
-   color:#171921;
-   @include adaptiv-value('font-size',52,34,1);
-   font-weight: 700;
-   line-height: 1.23;
-   // &:not(:last-child){
-   //    margin-bottom: 24px;
-   // }
-      &--big{
-         @include adaptiv-value('font-size',64,38,1);
-         font-weight: 800;
-         line-height: 1.18;
-      }
-      &--white{
-       color:#fff;
-      }
-   }
-   &__text {
-      p{
-         font-size: 18px;
-         line-height: 1.55;
-         color:#545971;
-      }
-   }
+  display: grid;
+  gap: 24px;
+  &--center {
+    text-align: center;
+  }
+  &--inline {
+    grid-template-columns: minmax(auto, 586px) minmax(auto, 613px);
+    justify-content: space-between;
+    gap: 24px;
+    align-items: end;
+  }
+  &__title {
+    color: #171921;
+    @include adaptiv-value("font-size", 52, 34, 1);
+    font-weight: 700;
+    line-height: 1.23;
+    // &:not(:last-child){
+    //    margin-bottom: 24px;
+    // }
+    &--big {
+      @include adaptiv-value("font-size", 64, 38, 1);
+      font-weight: 800;
+      line-height: 1.18;
+    }
+    &--white {
+      color: #fff;
+    }
+  }
+  &__text {
+    p {
+      font-size: 18px;
+      line-height: 1.55;
+      color: #545971;
+    }
+  }
 }
 
 /*
@@ -45,3 +45,64 @@
           </div>
         </div>
 */
+
+.profits {
+  display: flex;
+  @include adaptiv-value("column-gap", 42, 25, 1);
+  row-gap: 4px;
+  flex-wrap: wrap;
+  @media (max-width:1500px){
+   flex-direction: column;
+  }
+  &__item {
+    color: $liteColor;
+    font-size: 20px;
+    line-height: 1.6;
+    padding-left: 32px;
+    background: url("../img/hero/mark.svg") left no-repeat;
+  }
+}
+
+.button {
+  display: inline-flex;
+  padding: 8px;
+  min-height: 64px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60px;
+  background-color: $liteColor;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.33;
+  color:#fff;
+  transition: all 0.3s ease 0s;
+  &--min{
+
+  }
+  &--white{
+
+  }
+  &--icon {
+   span{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 16px;
+      gap:16px;
+      &::after{
+         content:'';
+         background: #fff url('../img/hero/phone.svg')center no-repeat;
+         flex: 0 0 48px;
+         width: 48px;
+         height: 48px;
+         border-radius: 50%;
+      }
+   }
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #1F3584;
+    }
+  }
+
+}

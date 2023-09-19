@@ -1,7 +1,7 @@
 @import 'nullstyle.scss';
 @import 'fonts.scss';
-@import 'common.scss';
 @import 'mixins.scss';
+@import 'ibg.scss';
 //
 $fontFamily: 'Plus Jakarta Sans', sans-serif;
 //
@@ -51,6 +51,6 @@ body{
    padding-right: 15px;
    margin: 0 auto;
 }
-
+@import 'common.scss';
 @import 'header.scss';
-
+@import 'hero.scss';
