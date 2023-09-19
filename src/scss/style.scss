@@ -1,0 +1,56 @@
+@import 'nullstyle.scss';
+@import 'fonts.scss';
+@import 'common.scss';
+@import 'mixins.scss';
+//
+$fontFamily: 'Plus Jakarta Sans', sans-serif;
+//
+$mainColor:#545971;
+$bgColor:#142257;
+$liteColor:#15B2F5;
+//
+$darkColor:#171921;
+//
+$fontSize:18px;
+//
+$containerWidth:1430px;
+$containerPadding : 30px;
+//md query
+$pc: $containerWidth + $containerPadding;
+$tablet: 991.98px;
+$mobile:767.98px;
+$mobileSmall:479.98px;
+
+body{
+   font-family: $fontFamily;
+   color:$mainColor;
+   @include adaptiv-value('font-size',18,16,1);
+ .lock & {
+   overflow: hidden;
+   touch-action: none;
+   overscroll-behavior: none;
+ }
+}
+.wrapper{
+	min-height: 100%;
+	display: flex;
+	flex-direction:column;
+	overflow: hidden;
+}
+//footer to the bottom
+> main{
+   flex: 1 1 auto;
+}
+//slider fix
+> * {
+   min-width: 0;
+}
+[class*="__container"]{
+   max-width: $containerWidth;
+   padding-left: 15px;
+   padding-right: 15px;
+   margin: 0 auto;
+}
+
+@import 'header.scss';
+

@@ -1,0 +1,47 @@
+@import 'mixins.scss';
+.block-header {
+ display: grid;
+ gap:24px;
+   &--center{
+   text-align: center;
+   }
+   &--inline{
+      grid-template-columns: minmax(auto,586px) minmax(auto,613px);
+      justify-content: space-between;
+      gap:24px;
+      align-items: end;
+   }
+   &__title {
+   color:#171921;
+   @include adaptiv-value('font-size',52,34,1);
+   font-weight: 700;
+   line-height: 1.23;
+   // &:not(:last-child){
+   //    margin-bottom: 24px;
+   // }
+      &--big{
+         @include adaptiv-value('font-size',64,38,1);
+         font-weight: 800;
+         line-height: 1.18;
+      }
+      &--white{
+       color:#fff;
+      }
+   }
+   &__text {
+      p{
+         font-size: 18px;
+         line-height: 1.55;
+         color:#545971;
+      }
+   }
+}
+
+/*
+  <div class="block-header">
+          <h2 class="block-header__title"></h2>
+          <div class="block-header__text">
+            <p></p>
+          </div>
+        </div>
+*/
