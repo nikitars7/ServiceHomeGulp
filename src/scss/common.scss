@@ -80,7 +80,11 @@
 
   }
   &--white{
-
+  background-color: #fff;
+  color:$liteColor
+  }
+  &--fw{
+    width: 100%;
   }
   &--icon {
    span{
