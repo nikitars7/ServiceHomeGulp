@@ -413,6 +413,7 @@ body {
   }
 }
 .hero {
+  position: relative;
   display: grid;
   grid-template-columns: auto;
   padding: 80px 15px 60px 15px;
@@ -591,4 +592,54 @@ body {
   color: #fff;
   font-weight: 600;
   line-height: 1.33;
+}
+
+.decor-hero__item {
+  position: absolute;
+  height: 50px;
+  bottom: 0;
+  background-color: #fff;
+  width: 450px;
+}
+@media (max-width: 1430px) {
+  .decor-hero__item {
+    width: calc(230px + 220 * (100vw - 992px) / 438);
+  }
+}
+.decor-hero__item:first-child {
+  left: 0;
+  border-radius: 0 8px 0 0;
+}
+.decor-hero__item:first-child::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  transform: translate(calc(100% - 2px), 2.3px);
+  border-top: 50px solid transparent;
+  border-left: 60px solid #fff;
+  border-bottom: 0px solid transparent;
+}
+.decor-hero__item:last-child {
+  right: 0;
+  border-radius: 8px 0 0 0;
+}
+.decor-hero__item:last-child::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  transform: translate(calc(-100% + 2px), 2.3px);
+  border-top: 50px solid transparent;
+  border-right: 60px solid #fff;
+  border-bottom: 0px solid transparent;
+}
+@media (max-width: 991.98px) {
+  .decor-hero {
+    display: none;
+  }
 }
