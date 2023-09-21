@@ -163,7 +163,7 @@
   &__item {
     position: absolute;
     height: 50px;
-    bottom: 0;
+    bottom: -1px;
     background-color: #fff;
     @include adaptiv-value("width", 450, 230, 1, 992);
   &:first-child{
