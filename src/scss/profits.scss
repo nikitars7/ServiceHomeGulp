@@ -1,0 +1,108 @@
+.profits {
+  @include adaptiv-value("padding-bottom", 158, 40, 1);
+  @media (min-width:$tablet){
+   @include adaptiv-value("padding-left", 60, 15, 1);
+   @include adaptiv-value("padding-right", 60, 15, 1);
+  }
+  &__content {
+   position: relative;
+    @include adaptiv-value("padding-top", 64, 35, 1);
+    @include adaptiv-value("padding-bottom", 64, 35, 1);
+    background-color: $bgColor;
+    border-radius: 24px;
+    @media (min-width:$tablet){
+      padding-left: 55px;
+      padding-right: 55px;
+      &::before,
+      &::after{
+        content:'';
+        position: absolute;
+        top:50%;
+        height: 73.295455%;
+        max-height: 645px;
+        width: 45px;
+        transform: translate(0px ,-50%);
+        background: url('../img/profits/Decoration.svg') left / auto 100% no-repeat;
+      }
+      &::before{
+        left: 0;
+      }
+      &::after{
+        right: 0;
+        transform: translate(0px ,-50%) rotate(180deg);
+      }
+   }
+  }
+  &__container {
+  }
+
+  &__block-header {
+    position: relative;
+    @include adaptiv-value("padding-bottom", 120, 40, 1);
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      @include adaptiv-value("bottom", 60, 15, 1);
+      background: linear-gradient(
+        90deg,
+        rgba(20, 34, 87, 0) 0%,
+        rgba(79, 102, 183, 1) 50%,
+        rgba(20, 34, 87, 0) 100%
+      );
+    }
+    @media (max-width:$tablet){
+      grid-template-columns: auto;
+   }
+  }
+
+  &__items {
+   display: grid;
+   grid-template-columns: repeat(2,auto);
+   justify-content: space-between;
+   column-gap: 20px;
+   @include adaptiv-value('row-gap',60,20,1);
+   @media (max-width:$tablet){
+      grid-template-columns: auto;
+   }
+  }
+
+  &__item {
+   max-width: 630px;
+  }
+}
+
+.item-profit {
+  display: flex;
+  @include adaptiv-value("gap", 32, 15, 1);
+  &__logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 100px;
+    height: 100px;
+    img {
+      max-width: 100%;
+    }
+    
+  }
+
+  &__body {
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.33;
+    color: #fff;
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__text {
+    line-height: 1.55;
+  }
+}

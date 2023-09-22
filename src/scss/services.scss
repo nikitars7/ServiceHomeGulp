@@ -33,6 +33,7 @@
   &--blue {
     text-align: center;
     background-color: $liteColor;
+    color:#fff;
     @media (max-width:$mobileSmall){
       padding: 20px;
    }
@@ -58,12 +59,16 @@
 
   &__title {
     font-size: 24px;
-    color: #171921;
     font-weight: 700;
     line-height: 1.33;
+    color: #171921;
     &:not(:last-child) {
       @include adaptiv-value("margin-bottom", 12, 8, 1);
     }
+    &--white{
+      color:#fff;
+    }
+
   }
 
   &__text {

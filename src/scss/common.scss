@@ -16,6 +16,10 @@
     @include adaptiv-value("font-size", 52, 34, 1);
     font-weight: 700;
     line-height: 1.23;
+    transition: all 0.8s ease 0s;
+    opacity: 0;
+    visibility: hidden;
+    transform:translate(0px,-200px);
     // &:not(:last-child){
     //    margin-bottom: 24px;
     // }
@@ -26,6 +30,11 @@
     }
     &--white {
       color: #fff;
+    }
+    &.active{
+     opacity: 1;
+     visibility: visible;
+     transform:translate(0px,0px);
     }
   }
   &__text {
@@ -46,7 +55,7 @@
         </div>
 */
 
-.profits {
+.bonus {
   display: flex;
   @include adaptiv-value("column-gap", 42, 25, 1);
   row-gap: 4px;

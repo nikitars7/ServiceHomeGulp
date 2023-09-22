@@ -73,6 +73,9 @@ $bgColor: #142257;
         text-decoration: underline;
       }
     }
+    &.active{
+      color:$liteColor;
+    }
   }
 }
 
