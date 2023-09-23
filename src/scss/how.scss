@@ -1,0 +1,74 @@
+.how {
+  @include adaptiv-value("padding-bottom", 140, 40, 1);
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @media (max-width:$tablet){
+      grid-template-columns: auto;
+      gap:30px;
+    }
+  }
+
+  &__image {
+   @media (max-width:$tablet){
+      order:2;
+   }
+    img {
+      transform: translate(-10.5997%, 0px);
+      max-width: 100%;
+      @media (max-width:$tablet){
+         transform: translate(0px, 0px);
+         text-align: center;
+       }
+    }
+  }
+
+  &__content {
+   @media (max-width:$tablet){
+      order:1;
+   }
+  }
+
+  &__block-header {
+    max-width: 410px;
+    &:not(:last-child) {
+      @include adaptiv-value("margin-bottom", 60, 30, 1);
+    }
+  }
+
+  &__list {
+  }
+}
+
+.list-how {
+  display: grid;
+  @include adaptiv-value("gap", 52, 30, 1);
+ @extend %listCounter;
+  &__item {
+   @include adaptiv-value('padding-left',70,40,1);
+    display: grid;
+    grid-template-columns: 165px auto;
+    gap: 34px;
+    &:before{
+      @include adaptiv-value('font-size',52,34,1);
+      font-weight: 700;
+      line-height: 1.23;
+      color:#9EA3B5;
+    }
+    @media (max-width:520px){
+      grid-template-columns: auto;
+      gap:10px;
+    }
+  }
+
+  &__title {
+   font-size: 24px;
+   font-weight: 700;
+   color:#171921;
+   line-height: 1.33;
+  }
+
+  &__text {
+   line-height: 1.55;
+  }
+}

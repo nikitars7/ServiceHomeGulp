@@ -1,0 +1,14 @@
+%listCounter{
+   list-style-type: none;
+   counter-reset: item;
+   li{
+      position: relative;
+      &:before{
+         counter-increment: item;
+         content: counter(item)".";
+         position: absolute;
+         top: 0;
+         left: 0;
+      }
+   }
+}
