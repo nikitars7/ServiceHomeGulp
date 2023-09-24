@@ -1,0 +1,111 @@
+.reviews {
+  @include adaptiv-value("padding-bottom", 130, 45, 1);
+
+  &__contaier {
+    max-width: 1160px;
+    margin: 0px auto;
+  }
+  &__body {
+    padding: 0 72px;
+    position: relative;
+  }
+
+  &__block-header {
+    max-width: 650px;
+    margin: 0px auto;
+    @include adaptiv-value("margin-bottom", 90, 45, 1);
+  }
+
+  &__slider {
+  }
+
+  &__wrapper {
+  }
+
+  &__slide {
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0px, -50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #e3e6f0 url("../img/reviews/arrow.svg") center no-repeat;
+    &--left {
+      left: 0;
+      transform: translate(0px, -50%) rotate(-180deg);
+    }
+
+    &--right {
+      right: 0;
+    }
+  }
+}
+
+.slide-reviews {
+  text-align: center;
+  &__logo {
+    position: relative;
+    text-align: center;
+    padding-bottom: 25px;
+    &:not(:last-child) {
+     @include adaptiv-value('margin-bottom',40,25,1);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        rgba(20, 34, 87, 0) 0%,
+        #e3e6f0 50%,
+        rgba(20, 34, 87, 0) 100%
+      );
+    }
+  }
+
+  &__text {
+   display: inline-block;
+   max-width: 730px;
+   &:not(:last-child) {
+      @include adaptiv-value('margin-bottom',40,25,1);
+     }
+  }
+
+  &__person {
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   gap:32px;
+  }
+
+  &__avatar {
+   text-align: left;
+   flex: 0 0 76px;
+   height: 76px;
+   border-radius: 50%;
+   img{max-width: 100%;}
+  }
+
+  &__body {
+   text-align: left;
+  }
+
+  &__name {
+   font-size: 24px;
+   font-weight: 700;
+   line-height: 1.33;
+   color:#171921;
+   &:not(:last-child){margin-bottom:8px}
+  }
+  &__rating{
+   .rating__value{
+      display: none;
+   }
+  }
+}

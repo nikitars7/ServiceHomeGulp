@@ -3,6 +3,8 @@ import { openMenu } from './burger.js';
 import {useDynamicAdapt} from './dynamicAdapt.js'
 import { smoothScrollTo } from './smoothAnchors.js';
 import { isTitleAnimated, sectionInterObserver } from './sectionObserver.js';
+import { swiper } from './swiper.js';
+import { initRatings } from './rating.js';
 ndevFunctions.isWebp();
 
 openMenu();
@@ -10,3 +12,5 @@ useDynamicAdapt();
 smoothScrollTo();
 sectionInterObserver();
 isTitleAnimated();
+swiper();
+initRatings();
