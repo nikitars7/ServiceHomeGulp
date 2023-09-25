@@ -1,5 +1,8 @@
 export const fetchBlog = () => {
   const blogItems = document.querySelector(".blog__items");
+  let products;
+  let startIndex = 0;
+  let endIndex = 3;
   if (blogItems) {
     fetchingItems();
   }
@@ -7,16 +10,24 @@ export const fetchBlog = () => {
     try {
       const response = await fetch("files/blog.json");
       const data = await response.json();
-      initBlog(data,3);
+      products = data.items;
+      initBlog(products, startIndex, endIndex);
     } catch (e) {
       console.warn(e.message);
     }
   }
-  function initBlog(data,counter) {
-    for (let index = 0; index < counter; index++) {
-      const item = data.items[index];
-      buildBlogItem(item);
-    }
+  function initBlog(data, startIndex, endIndex) {
+    const blogProducts = data.slice(startIndex, endIndex);
+    blogProducts.forEach((item) => buildBlogItem(item));
+    isVisibleMore();
+  }
+  function isVisibleMore() {
+    const productsLength = products.length;
+    const currentProducts = document.querySelectorAll(".item-blog").length;
+    const buttonView = document.querySelector(".blog__view-more");
+    currentProducts < productsLength
+      ? (buttonView.hidden = false)
+      : (buttonView.hidden = true);
   }
   function buildBlogItem(item) {
     let itemBlog = ``;
@@ -48,11 +59,13 @@ export const fetchBlog = () => {
     itemBlog += `</article>`;
     blogItems.insertAdjacentHTML("beforeend", itemBlog);
   }
-  document.addEventListener('click',addMoreItems);
-  function addMoreItems(e){
-   e.preventDefault();
-   if(e.target.closest('.blog__view-more')){
-    initBlog(data,6)
-   }
+  document.addEventListener("click", addMoreItems);
+  function addMoreItems(e) {
+    e.preventDefault();
+    if (e.target.closest(".blog__view-more")) {
+      startIndex = document.querySelectorAll(".item-blog").length;
+      endIndex = startIndex + 3;
+      initBlog(products, startIndex, endIndex);
+    }
   }
 };
