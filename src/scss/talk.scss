@@ -1,21 +1,59 @@
 .talk {
-
+  background-color: $bgColor;
+  position: relative;
    &__container {
+      @media (min-width:$tablet){
+         display: grid;
+         grid-template-columns: repeat(2,1fr);
+         @include adaptiv-value('gap',100,20,1);
+      }
    }
 
    &__content {
+      position: relative;
+      @include adaptiv-value('padding-top',165,60,1);
+      @include adaptiv-value('padding-bottom',106,60,1);
+      &::before{
+         content:'';
+         background: url('../img/talk/decor.svg') 0 0 / 83% no-repeat;
+         aspect-ratio: 581/44;
+         width: 100%;
+         position: absolute;
+         left: 0;
+         top: 0;
+      }
    }
 
    &__block-header {
+      &:not(:last-child){margin-bottom:24px}
    }
 
    &__bonuses {
+      &:not(:last-child){margin-bottom:36px}
    }
 
    &__button {
    }
 
    &__image {
+      img{
+         max-width: 100%;
+      }
+      @media (min-width:$tablet){
+         position: absolute;
+         bottom: 0;
+         right: 0;
+         width: 100%;
+         display: grid;
+         grid-template-columns: repeat(2,1fr);
+         @include adaptiv-value('gap',100,20,1);
+         justify-self: end;
+         img{
+            max-width: 100%;
+            grid-column: 2/3;
+         }
+      }
+
    }
 }
 

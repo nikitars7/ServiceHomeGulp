@@ -7,6 +7,7 @@ import { swiper } from './swiper.js';
 import { initRatings } from './rating.js';
 import { fetchBlog } from './blog.js';
 import { spoilerInit } from './spoiler.js';
+import { formValidate } from './formValid.js';
 ndevFunctions.isWebp();
 
 openMenu();
@@ -18,3 +19,4 @@ swiper();
 initRatings();
 fetchBlog();
 spoilerInit();
+formValidate();
