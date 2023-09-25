@@ -287,6 +287,19 @@ body {
   line-height: 1.55;
   color: #545971;
 }
+.block-header__text a {
+  margin-left: 11px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.33;
+  text-decoration: underline;
+  color: #15B2F5;
+}
+@media (any-hover: hover) {
+  .block-header__text a:hover {
+    text-decoration: none;
+  }
+}
 
 /*
   <div class="block-header">
@@ -358,7 +371,7 @@ body {
 }
 @media (any-hover: hover) {
   .button:hover {
-    background-color: #1F3584;
+    background-color: #1f3584;
   }
 }
 
@@ -1508,4 +1521,85 @@ body {
     background-color: #15B2F5;
     color: #fff;
   }
+}
+
+.questions {
+  padding-top: 190px;
+  padding-bottom: 230px;
+}
+@media (max-width: 1430px) {
+  .questions {
+    padding-top: calc(40px + 150 * (100vw - 320px) / 1110);
+  }
+}
+@media (max-width: 1430px) {
+  .questions {
+    padding-bottom: calc(40px + 190 * (100vw - 320px) / 1110);
+  }
+}
+.questions__container {
+  display: grid;
+  grid-template-columns: auto 57.84%;
+  align-items: start;
+  gap: 25px;
+}
+@media (max-width: 991.98px) {
+  .questions__container {
+    grid-template-columns: auto;
+  }
+}
+.spollers-questions {
+  display: grid;
+  gap: 12px;
+}
+.spollers-questions__item {
+  padding: 24px 32px;
+  transition: 0.5s ease;
+  border-radius: 12px;
+}
+.spollers-questions__item.open {
+  background-color: #F3F5F9;
+}
+.spollers-questions__title {
+  padding-right: 30px;
+  transition: all 0.5s;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.33;
+}
+@media (max-width: 1430px) {
+  .spollers-questions__title {
+    font-size: calc(18px + 6 * (100vw - 320px) / 1110);
+  }
+}
+._init .spollers-questions__title {
+  position: relative;
+  cursor: pointer;
+}
+._init .spollers-questions__title::before, ._init .spollers-questions__title::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  background-color: #000;
+  height: 2px;
+  width: 12px;
+  transition: 0.5s ease 0s;
+}
+._init .spollers-questions__title::before {
+  transform: translate(-75%, -50%) rotate(40deg);
+}
+._init .spollers-questions__title::after {
+  transform: translate(0, -50%) rotate(-40deg);
+}
+._init .spollers-questions__title._active::before {
+  transform: translate(-75%) rotate(-40deg);
+}
+._init .spollers-questions__title._active::after {
+  transform: rotate(40deg);
+}
+.spollers-questions__body {
+  line-height: 1.5;
+  color: #737373;
+  padding-top: 16px;
 }

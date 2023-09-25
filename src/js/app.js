@@ -6,6 +6,7 @@ import { isTitleAnimated, sectionInterObserver } from './sectionObserver.js';
 import { swiper } from './swiper.js';
 import { initRatings } from './rating.js';
 import { fetchBlog } from './blog.js';
+import { spoilerInit } from './spoiler.js';
 ndevFunctions.isWebp();
 
 openMenu();
@@ -16,3 +17,4 @@ isTitleAnimated();
 swiper();
 initRatings();
 fetchBlog();
+spoilerInit();

@@ -19,7 +19,7 @@
     transition: all 0.8s ease 0s;
     opacity: 0;
     visibility: hidden;
-    transform:translate(0px,-200px);
+    transform: translate(0px, -200px);
     // &:not(:last-child){
     //    margin-bottom: 24px;
     // }
@@ -31,10 +31,10 @@
     &--white {
       color: #fff;
     }
-    &.active{
-     opacity: 1;
-     visibility: visible;
-     transform:translate(0px,0px);
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(0px, 0px);
     }
   }
   &__text {
@@ -42,6 +42,19 @@
       font-size: 18px;
       line-height: 1.55;
       color: #545971;
+    }
+    a {
+      margin-left: 11px;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1.33;
+      text-decoration: underline;
+      color: $liteColor;
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
   }
 }
@@ -60,8 +73,8 @@
   @include adaptiv-value("column-gap", 42, 25, 1);
   row-gap: 4px;
   flex-wrap: wrap;
-  @media (max-width:1500px){
-   flex-direction: column;
+  @media (max-width: 1500px) {
+    flex-direction: column;
   }
   &__item {
     color: $liteColor;
@@ -83,39 +96,37 @@
   font-size: 24px;
   font-weight: 700;
   line-height: 1.33;
-  color:#fff;
+  color: #fff;
   transition: all 0.3s ease 0s;
-  &--min{
-
+  &--min {
   }
-  &--white{
-  background-color: #fff;
-  color:$liteColor
+  &--white {
+    background-color: #fff;
+    color: $liteColor;
   }
-  &--fw{
+  &--fw {
     width: 100%;
   }
   &--icon {
-   span{
+    span {
       display: flex;
       align-items: center;
       justify-content: center;
       padding-left: 16px;
-      gap:16px;
-      &::after{
-         content:'';
-         background: #fff url('../img/hero/phone.svg')center no-repeat;
-         flex: 0 0 48px;
-         width: 48px;
-         height: 48px;
-         border-radius: 50%;
+      gap: 16px;
+      &::after {
+        content: "";
+        background: #fff url("../img/hero/phone.svg") center no-repeat;
+        flex: 0 0 48px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
       }
-   }
+    }
   }
   @media (any-hover: hover) {
     &:hover {
-      background-color: #1F3584;
+      background-color: #1f3584;
     }
   }
-
 }
