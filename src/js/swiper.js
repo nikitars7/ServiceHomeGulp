@@ -8,9 +8,10 @@ export const swiper = () => {
       observeParents:true,
       slidesPerView:1,
       spaceBetween:0,
+      autoHeight:true,
       speed:800,
       pagination:{
-        el:'.swiper-pagination',
+        el:'.reviews__bullets',
         clickable:true,
       },
       navigation:{

@@ -5,6 +5,7 @@ import { smoothScrollTo } from './smoothAnchors.js';
 import { isTitleAnimated, sectionInterObserver } from './sectionObserver.js';
 import { swiper } from './swiper.js';
 import { initRatings } from './rating.js';
+import { fetchBlog } from './blog.js';
 ndevFunctions.isWebp();
 
 openMenu();
@@ -14,3 +15,4 @@ sectionInterObserver();
 isTitleAnimated();
 swiper();
 initRatings();
+fetchBlog();

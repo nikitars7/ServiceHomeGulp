@@ -1,7 +1,6 @@
 'use strict';
 
 const ratings =  document.querySelectorAll('.rating');
-console.log(ratings)
 // if(ratings.length > 0){
 //    initRatings();
 // }
@@ -25,7 +24,6 @@ export function initRatings(){
    function initRatingVars(rating){
       ratingActive = rating.querySelector('.rating__active');
       ratingValue = rating.querySelector('.rating__value');
-      console.log(ratingActive,ratingValue)
    }
    //Changing active width
    function setRatingActiveWidth(index = ratingValue.innerHTML){

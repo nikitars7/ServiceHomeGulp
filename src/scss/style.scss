@@ -52,6 +52,7 @@ body{
    padding-right: 15px;
    margin: 0 auto;
 }
+@import 'swiper.scss';
 @import 'common.scss';
 @import 'header.scss';
 @import 'hero.scss';
@@ -60,3 +61,5 @@ body{
 @import 'profits.scss';
 @import 'how.scss';
 @import 'reviews.scss';
+@import 'blog.scss';
+

@@ -1,0 +1,126 @@
+.blog {
+  @include adaptiv-value("padding-top", 84, 30, 1);
+  @include adaptiv-value("padding-bottom", 84, 30, 1);
+  &__container {
+    display: grid;
+  }
+
+  &__block-header {
+    max-width: 700px;
+    margin: 0px auto;
+    &:not(:last-child) {
+      @include adaptiv-value("margin-bottom", 56, 25, 1);
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 48px;
+    &:not(:last-child) {
+      @include adaptiv-value("margin-bottom", 56, 25, 1);
+    }
+    @media (max-width: $mobileSmall) {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+  }
+
+  &__item {
+  }
+
+  &__view-more {
+    justify-self: center;
+    color: $liteColor;
+    @include adaptiv-value("font-size", 24, 18, 1);
+    font-weight: 700;
+    line-height: 1.33;
+    padding-right: 18px;
+    background: #fff url("../img/blog/arrow.svg") right no-repeat;
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.item-blog {
+  display: grid;
+
+  &__image {
+    aspect-ratio: 444/300;
+    border-radius: 24px;
+    overflow: hidden;
+    img {
+      display: block;
+      transition: all 0.3s;
+      opacity: 0.6;
+    }
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        img {
+          opacity: 1;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  &__date {
+    line-height: 1.55;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__title-link {
+    color: #171921;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.25;
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__text {
+    line-height: 1.55;
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    row-gap: 12px;
+  }
+
+  &__tag {
+    padding: 8px 16px;
+    font-weight: 600;
+    border-radius: 16px;
+    background-color: #f3f5f9;
+    line-height: 1.42;
+    font-size: 14px;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $liteColor;
+        color: #fff;
+      }
+    }
+  }
+}
