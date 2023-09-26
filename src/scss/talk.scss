@@ -11,6 +11,7 @@
 
    &__content {
       position: relative;
+      z-index:2;
       @include adaptiv-value('padding-top',165,60,1);
       @include adaptiv-value('padding-bottom',106,60,1);
       &::before{
